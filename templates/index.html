@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de agendamento manicure</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Sistema de agendamento de manicure</h1>
+    <form action="#" method="post">
+        <label for="data">Data:</label>
+        <select name="data" required>
+            {% for dia in dias %}
+                <option value="{{ dia.data }}">{{ dia.dia_semana }} - {{ dia.data }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="horario">Horário:</label>
+        <select name="horario" required>
+            {% for horario in dias[0].horarios %}
+                <option value="{{ horario }}">{{ horario }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="cliente">Nome:</label>
+        <input type="text" name="cliente" required><br>
+
+        <button type="submit">Agendar</button>
+    </form>
+</body>
+</html>
