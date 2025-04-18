@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Painel da Manicure</title></head>
+<body>
+<h1>Painel da Manicure</h1>
+<table border="1">
+  <tr>
+    <th>Nome</th>
+    <th>Horário</th>
+    <th>Ações</th>
+  </tr>
+  {% for agendamento in agendamentos %}
+  <tr>
+    <td>{{ agendamento['nome'] }}</td>
+    <td>{{ agendamento['horario'] }}</td>
+    <td><a href="/excluir/{{ loop.index0 }}">Excluir</a></td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>
