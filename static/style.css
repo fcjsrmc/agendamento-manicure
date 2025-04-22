@@ -1,18 +1,67 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    text-align: center;
 }
 
 h1 {
-    color: #c71585;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
-form {
-    margin-top: 20px;
+.dia {
+    margin: 20px 0;
+    padding: 15px;
+    background: #ffe4e1;
+    border-radius: 12px;
 }
 
-label, select, input {
-    display: block;
+h2 {
+    font-size: 20px;
     margin-bottom: 10px;
+}
+
+.horario {
+    display: inline-block;
+    margin: 8px;
+    font-size: 16px;
+    background: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.horario input {
+    margin-right: 6px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    margin: 20px 0;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    padding: 14px 28px;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff1493;
+}
+
+@media (max-width: 600px) {
+    .horario {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
 }

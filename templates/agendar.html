@@ -1,18 +1,27 @@
-
 <!DOCTYPE html>
-<html>
-<head><title>Agendar Horário</title></head>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamento de Manicure</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-<h1>Agendar Horário</h1>
-<form method="post">
-  Nome: <input type="text" name="nome" required><br><br>
-  Data e horário:
-  <select name="horario">
-    {% for horario in horarios_disponiveis %}
-      <option value="{{ horario }}">{{ horario }}</option>
-    {% endfor %}
-  </select><br><br>
-  <input type="submit" value="Agendar">
-</form>
+    <h1>Agende seu horário</h1>
+    <form method="POST">
+        {% for dia in agendamentos %}
+            <div class="dia">
+                <h2>{{ dia.data }} ({{ dia.dia_semana }})</h2>
+                {% for horario in dia.horarios %}
+                    <label class="horario">
+                        <input type="radio" name="data_hora" value="{{ dia.data }} {{ horario }}" required>
+                        {{ horario }}
+                    </label>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <input type="text" name="cliente" placeholder="Seu nome" required>
+        <button type="submit">Agendar</button>
+    </form>
 </body>
 </html>
